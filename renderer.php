@@ -15,21 +15,37 @@
 // along with Moodle.  If not, see <http://www.gnu.org/licenses/>.
 
 /**
- * Simple report.
+ * A simple report plugin renderer
  *
  * @package   report_simplereport
- * @copyright 2020 Richard Jones {@link https://richardnz.net}
+ * @copyright  2020 Richard Jones {@link https://richardnz.net}
  * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
+ */
+
+/**
+ * Developed for MoodleBites for Developers Level 1
+ * by Richard Jones.
  */
 
 defined('MOODLE_INTERNAL') || die;
 
-// General.
-$string['pluginname'] = 'Course events report';
-$string['time'] = 'Time';
-$string['event'] = 'Event name';
-$string['description'] = 'Description';
-$string['caption'] = 'List of course events';
+class report_simplereport_renderer extends plugin_renderer_base {
 
-// Capability strings.
-$string['simplereport:view'] = 'View the simple report';
+ function display_events($eventrecords) {
+
+        $data = new stdClass();
+
+        foreach($eventrecords as $eventrecord) {
+            $event = array();
+            $event['timestart'] = $eventrecord->timestart;
+            $event['name'] = $eventrecord->name;
+            $event['description'] = $eventrecord->description;
+            $data->events[] = $event;
+        }
+
+        echo $this->output->header();
+        echo $this->render_from_template('report_simplereport/report', $data);
+        echo $this->output->footer();
+ }
+
+}

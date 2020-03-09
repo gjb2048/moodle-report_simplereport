@@ -27,8 +27,8 @@
 defined('MOODLE_INTERNAL') || die;
 
 $plugin->component = 'report_simplereport';
-$plugin->version = 2025072900;
+$plugin->version = 2025072901;
 $plugin->requires = 2024100700.00; // 4.5 (Build: 20241007).
 $plugin->supported = [405, 405];
-$plugin->release = '405.1.0';
+$plugin->release = '405.1.1';
 $plugin->maturity = MATURITY_STABLE;

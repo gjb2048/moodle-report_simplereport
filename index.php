@@ -18,7 +18,7 @@
  * A simple report plugin example
  *
  * @package   report_simplereport
- * @copyright  2020 Richard Jones {@link https://richardnz.net}
+ * @copyright 2020 Richard Jones {@link https://richardnz.net}
  * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 
@@ -50,6 +50,6 @@ require_capability('report/simplereport:view',$context);
 echo $OUTPUT->header();
 echo $OUTPUT->heading(get_string('pluginname','report_simplereport'));
 $eventrecords = $DB->get_records('event', ['courseid' => $id], null,
-        'name, description, timestart');
+    'name, description, timestart');
 var_dump($eventrecords);
 echo $OUTPUT->footer();

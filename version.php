@@ -18,10 +18,9 @@
  * Simple report
  *
  * @package   report_simplereport
- * @copyright  2020 Richard Jones {@link https://richardnz.net}
+ * @copyright 2020 Richard Jones {@link https://richardnz.net}
  * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
-
 
 defined('MOODLE_INTERNAL') || die;
 

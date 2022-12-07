@@ -1,5 +1,4 @@
 <?php
-
 // This file is part of Moodle - http://moodle.org/
 //
 // Moodle is free software: you can redistribute it and/or modify
@@ -28,5 +27,5 @@ defined('MOODLE_INTERNAL') || die;
 // General.
 $string['pluginname'] = 'Course events report';
 
-// Capability strings
+// Capability strings.
 $string['simplereport:view'] = 'View the simple report';

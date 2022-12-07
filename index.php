@@ -19,6 +19,8 @@
  *
  * @package   report_simplereport
  * @copyright 2020 Richard Jones {@link https://richardnz.net}
+ * @copyright &copy; 2022 G J Barnard.
+ * @author    G J Barnard - gjbarnard at gmail dot com and {@link http://moodle.org/user/profile.php?id=442195}
  * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 
@@ -33,7 +35,7 @@ $id = required_param('id', PARAM_INT);
 
 $course = $DB->get_record('course', ['id' => $id]);
 if (!$course) {
-    print_error('invalidcourseid');
+    throw new \moodle_exception('invalidcourseid');
 }
 
 $context = context_course::instance($course->id);
@@ -45,10 +47,10 @@ $PAGE->set_pagelayout('admin');
 require_login($course);
 
 // Check basic permission.
-require_capability('report/simplereport:view',$context);
+require_capability('report/simplereport:view', $context);
 
 echo $OUTPUT->header();
-echo $OUTPUT->heading(get_string('pluginname','report_simplereport'));
+echo $OUTPUT->heading(get_string('pluginname', 'report_simplereport'));
 $eventrecords = $DB->get_records('event', ['courseid' => $id], null,
     'name, description, timestart');
 var_dump($eventrecords);

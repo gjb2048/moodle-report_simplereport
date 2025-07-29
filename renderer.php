@@ -26,9 +26,13 @@
  * Developed for MoodleBites for Developers Level 1
  * by Richard Jones.
  */
-
 class report_simplereport_renderer extends plugin_renderer_base {
 
+    /**
+     * Display the course events.
+     *
+     * @param $eventrecords Array of event records.
+     */
     public function display_events($eventrecords) {
         // The param is an array of objects which Mustache won't iterate over.
         $data = new stdClass();

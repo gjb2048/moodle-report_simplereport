@@ -39,7 +39,7 @@ if (!$course) {
 }
 
 $context = context_course::instance($course->id);
-$url = new moodle_url('/report/simplereport/index.php', ['course' => $id]);
+$url = new core\url('/report/simplereport/index.php', ['course' => $id]);
 
 $PAGE->set_url($url);
 $PAGE->set_pagelayout('admin');
